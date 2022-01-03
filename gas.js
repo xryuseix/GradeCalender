@@ -29,7 +29,9 @@ const makeTweetText = (todaySchedules, year, month, day) => {
 
 const main = () => {
   const { todaySchedules, year, month, day } = getTodaySchedule();
-  const tweetText = makeTweetText(todaySchedules, year, month, day);
-  console.log(tweetText);
-  tweet(tweetText);
+  if(todaySchedules.length > 0) {
+    const tweetText = makeTweetText(todaySchedules, year, month, day);
+    tweet(tweetText);
+    console.log(tweetText);
+  }
 };
